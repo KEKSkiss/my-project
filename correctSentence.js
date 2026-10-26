@@ -17,7 +17,27 @@ correctSentence("Greetings, friends") == "Greetings, friends."
 correctSentence("Greetings, friends.") == "Greetings, friends."
  */
 
+/*
 export default function correctSentence(text) {
   // your solution goes here
   return text;
 }
+ */
+
+export default function correctSentence(text) {
+
+  // Делаем первую букву заглавной
+  let result = text[0].toUpperCase() + text.slice(1);
+
+  // Добавляем точку в конец, если её нет
+  if (!result.endsWith('.')) {
+    result += '.';
+  }
+
+  return result;
+}
+
+
+
+
+

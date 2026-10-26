@@ -25,6 +25,14 @@ nonUniqueElements([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
  */
 
 export default function nonUniqueElements(data) {
-  // your solution goes here
-  return data
+  const count = {};
+
+  // Считаем, сколько раз встречается каждый элемент
+  for (const num of data) {
+    count[num] = (count[num] || 0) + 1;
+  }
+
+  // Оставляем только те элементы, которые встречаются больше одного раза
+  return data.filter(num => count[num] > 1);
 }
+
